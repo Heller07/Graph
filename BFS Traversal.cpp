@@ -53,7 +53,7 @@ vector<int> BFS(int vertex, vector<pair<int,int>> &edges){//vertex==no. of nodes
         bfs(adjL,visited,ans,i);//bfs for printing
     }
    }
-   
+   return ans;
    
 }
 int main(){
