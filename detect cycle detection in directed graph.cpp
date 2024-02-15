@@ -1,7 +1,7 @@
 #include <list>
 #include <unordered_map>
 
-bool checkcycleDFS(int node,unordered_map<int,bool> visited,unordered_map<int,bool> &dfsvisited,unordered_map<int, list<int>> &adj){
+bool checkcycleDFS(int node,unordered_map<int,bool> &visited,unordered_map<int,bool> &dfsvisited,unordered_map<int, list<int>> &adj){
   visited[node] = true;
   dfsvisited[node] = true;
   
