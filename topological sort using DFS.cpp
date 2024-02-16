@@ -13,7 +13,7 @@ void toposort(int node,vector<bool> &visited,stack<int> &s,unordered_map<int, li
     }
     s.push(node);
 }
-
+//only for directed acyclic graph DAG
 
 vector<int> topologicalSort(vector<vector<int>> &edges, int v, int e)  {
     // Write your code here
