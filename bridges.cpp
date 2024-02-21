@@ -1,7 +1,7 @@
 #include <unordered_map>
 #include <list>
 #include <vector>
-void dfs(int node,int parent,int &timer,vector<int> &low, vector<int> &disc,vector<vector<int>> &result,unordered_map<int,list<int>> &adj,unordered_map<int,bool> &vis){
+void dfs(int node,int parent,int &timer, vector<int> &disc,vector<int> &low,unordered_map<int,bool> &vis,unordered_map<int,list<int>> &adj,vector<vector<int>> &result){
     vis[node] = true;
     disc[node] = low[node] = timer++;
 
@@ -10,7 +10,7 @@ void dfs(int node,int parent,int &timer,vector<int> &low, vector<int> &disc,vect
             continue;
         }
         if(!vis[nbr]){
-            dfs(nbr,node,timer,disc,low,result,adj,vis);
+            dfs(nbr,node,timer,disc,low,vis,adj,result);
             low[node] = min(low[node],low[nbr]);
             //check edge is bridge
             if(low[nbr]>disc[node]){
@@ -55,7 +55,7 @@ for(int i = 0;i<v;i++){
 vector<vector<int>> result;
 for(int i = 0;i<v;i++){
     if(!vis[i]){
-        dfs(i,parent,timer,disc,low,result,adj,vis);
+        dfs(i,parent,timer,disc,low,vis,adj,result);
     }
 }
 return result;
